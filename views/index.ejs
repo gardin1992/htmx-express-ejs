@@ -1,7 +1,9 @@
 <%- contentFor('body') %>
 
-<h1><%= title %></h1>
 <p>Welcome to <%= title %></p>
+
+<a href="/blog">Blog</a>
+
 <button
   hx-get="/blog"
   hx-trigger="click"
