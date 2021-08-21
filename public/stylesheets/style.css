@@ -73,6 +73,10 @@ a {
   background-color: var(--color04);
 }
 
+.c-sidebar.opened {
+  width: 50px;
+}
+
 .c-sidebar .subtitle {
   border-bottom: 1px solid var(--color06);
   font-weight: bold;
@@ -101,4 +105,9 @@ a {
 /* Main */
 .c-main {
   width: calc(100% - 320px);
+}
+
+/* Animations */
+.c-sidebar--width-animation {
+  transition: width 0.3s, color 1s;
 }
