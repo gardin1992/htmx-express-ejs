@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('layouts/header'); -%>
+
+    <main>
+      <div class="container"><%- body %></div>
+    </main>
+    <script
+      src="https://unpkg.com/htmx.org@1.5.0"
+      integrity="sha384-oGA+prIp5Vchu6we2YkI51UtVzN9Jpx2Z7PnR1I78PnZlN8LkrCT4lqqqmDkyrvI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

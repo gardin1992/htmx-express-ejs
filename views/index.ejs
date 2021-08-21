@@ -1,0 +1,13 @@
+<%- contentFor('body') %>
+
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+<button
+  hx-get="/blog"
+  hx-trigger="click"
+  hx-target="#parent-div"
+  hx-swap="outerHTML"
+>
+  Click Me!
+</button>
+<div id="parent-div"></div>
