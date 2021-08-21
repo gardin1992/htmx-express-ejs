@@ -23,9 +23,11 @@ router.get("/blog", function (req, res) {
     postsNumber++;
   }
 
-  console.log(posts);
-
-  res.render("blog", { title: "Blog", posts, layout: false });
+  res.render("blog/index", {
+    title: "Blog",
+    posts,
+    layout: !req.headers["hx-request"],
+  });
 });
 
 export default router;
