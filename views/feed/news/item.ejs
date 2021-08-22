@@ -1,0 +1,20 @@
+<article class="feed--news">
+  <img
+    class="feed--news__image"
+    src="<%= news.avatar %>"
+    alt="Foto de perfil"
+    title="foto de perfil do <%= news.author %>"
+  />
+
+  <div class="feed--news__body">
+    <div class="feed--news__content"><%= news.content %></div>
+    <h3 class="feed--news__title subtitle"><%= news.author %></h3>
+  </div>
+
+  <div class="feed--news__footer">
+    <span class="feed--news__created"
+      ><%= news.created.toLocaleDateString() + " " +
+      news.created.toLocaleTimeString() %></span
+    >
+  </div>
+</article>

@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import logger from "morgan";
 import expressEjsLayouts from "express-ejs-layouts";
 import indexRouter from "./routes/index";
+import sseRouter from "./routes/sse";
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
+app.use("/sse", sseRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
