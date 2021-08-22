@@ -1,23 +1,8 @@
 <%- contentFor('body') %>
 
-<p>Welcome to <%= title %></p>
-
-<section>
-  <h2>HTMX Posts</h2>
-  <button class="btn" hx-get="/blog" hx-target="#replaceMe" hx-swap="innerHTML">
-    Load More Agents... <img class="htmx-indicator" src="/img/bars.svg" />
-  </button>
-
-  <div id="replaceMe"></div>
-</section>
-
-<tr
-  hx-get="/blog?page=2"
-  hx-trigger="revealed"
-  hx-swap="afterend"
-  hx-target="#replaceMe"
->
-  <td>Agent Smith</td>
-  <td>void29@null.org</td>
-  <td>55F49448C0</td>
-</tr>
+<h2 class="page-title">Aplicações de exemplo</h2>
+<ul>
+  <li>Blog - atualizando o conteudo com infinite scroll</li>
+  <li>SocialBoard - atualizando o conteudo com o Server Sent Event (SSE)</li>
+  <li>Chat - troca de mensagens em tempo real usando Web Socker (ws)</li>
+</ul>

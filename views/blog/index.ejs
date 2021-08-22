@@ -1,39 +1,15 @@
-<% posts.forEach(function(post, index) { %>
-<article class="blog--post">
-  <h3 class="blog--post__title"><%= post.title %></h3>
+<%- contentFor('body') %>
 
-  <p class="blog--post__author">
-    <span role="button" class="c-icon" variant="user"> </span>
-    <%= post.author %>
-  </p>
+<section>
+  <h2
+    class="page-title"
+    hx-get="/blog/posts"
+    hx-target="#replaceMe"
+    hx-trigger="load once"
+    hx-swap="innerHTML"
+  >
+    <%= title %>
+  </h2>
 
-  <div class="blog--post__body">
-    <img
-      class="blog--post__image"
-      src="<%= post.image %>"
-      alt="<%= post.title %>"
-      title="describe <%= post.title %>"
-    />
-
-    <div class="blog--post__content"><%= post.content.slice(0, 400) %>...</div>
-  </div>
-
-  <div class="blog--post__footer">
-    <span class="blog--post__created"
-      ><%= post.created.toLocaleDateString() + " " +
-      post.created.toLocaleTimeString() %></span
-    >
-
-    <button class="c-button">Leia Mais.</button>
-  </div>
-</article>
-
-<% if((index + 1) === posts.length){ %>
-<div
-  hx-get="/blog?page=2"
-  hx-trigger="revealed once, intersect once"
-  hx-swap="closest afterend"
->
-  <img class="htmx-indicator" src="/images/spinner.gif" />
-</div>
-<% } %> <% }); %>
+  <div id="replaceMe"></div>
+</section>
