@@ -1,6 +1,5 @@
 import faker from "faker/locale/pt_BR";
 import { v4 as uuid } from "uuid";
-import { exec } from "child_process";
 
 const feedNews = {
   id: uuid(),
