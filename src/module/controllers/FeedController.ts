@@ -5,21 +5,16 @@ let facts: string[] = [];
 
 const sendEventsToAll = async (newFact: any) => {
   clients.forEach((client) => {
-    // client.response.render("feed/news/item", {
-    //   news: newFact,
-    //   layout: false,
-    // });
-
     client.response.write(`data: ${JSON.stringify(newFact)}\n\n`);
   });
 };
 
-export default class SseController {
+export default class FeedController {
   async status(request: Request, response: Response) {
     response.json({ clients: clients.length });
   }
 
-  async eventsHandler(request: Request, response: Response) {
+  async ssePosts(request: Request, response: Response) {
     const headers = {
       "Content-Type": "text/event-stream",
       Connection: "keep-alive",
@@ -46,24 +41,18 @@ export default class SseController {
     });
   }
 
-  async addFact(request: Request, response: Response) {
+  async sseAddPost(request: Request, response: Response) {
     const newFact = request.body;
     facts.push(newFact);
     response.json(newFact);
     return sendEventsToAll(newFact);
   }
 
-  async news(request: Request, response: Response) {
-    response.render("feed/news/list", {
+  async posts(request: Request, response: Response) {
+    response.render("feed/posts", {
       newsItems: [...facts].reverse(),
       layout: false,
       title: "Agora vai",
     });
   }
 }
-
-type FactProp = {
-  created: string;
-};
-
-const sortableByCreated = (array: any[]) => {};

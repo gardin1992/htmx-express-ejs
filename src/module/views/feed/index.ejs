@@ -3,7 +3,7 @@
 <section>
   <h2 class="page-title"><%= title %></h2>
 
-  <div hx-sse="connect:/sse/events">
-    <div hx-get="/sse/news" hx-trigger="sse:message"></div>
+  <div hx-sse="connect:/feed/sse/posts">
+    <div hx-get="/feed/posts" hx-trigger="sse:message"></div>
   </div>
 </section>
