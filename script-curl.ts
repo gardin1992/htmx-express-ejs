@@ -12,6 +12,6 @@ const feedNews = {
 
 let script = `-X POST -H "Content-Type: application/json"  -d '`;
 script += JSON.stringify(feedNews);
-script += `' -s http://localhost:3000/sse/fact`;
+script += `' -s http://localhost:3000/feed/sse/posts`;
 
 console.log("curl " + script);
