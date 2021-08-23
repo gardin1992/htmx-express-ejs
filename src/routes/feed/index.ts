@@ -1,5 +1,5 @@
 import express from "express";
-import { FeedController } from "../../module/controllers";
+import { FeedController } from "../../app/controllers";
 
 const router = express.Router();
 

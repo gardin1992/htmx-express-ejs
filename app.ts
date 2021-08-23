@@ -3,7 +3,7 @@ import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import expressEjsLayouts from "express-ejs-layouts";
-import { ErrorController } from "./src/module/controllers";
+import { ErrorController } from "./src/app/controllers";
 import router from "./src/routes";
 
 const app = express();

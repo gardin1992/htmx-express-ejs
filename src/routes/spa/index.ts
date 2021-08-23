@@ -1,5 +1,5 @@
 import express from "express";
-import { SpaController } from "../../module/controllers";
+import { SpaController } from "../../app/controllers";
 
 const router = express.Router();
 
