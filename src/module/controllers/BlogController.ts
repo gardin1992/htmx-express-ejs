@@ -2,8 +2,8 @@ import faker from "faker/locale/pt_BR";
 import { v4 as uuid } from "uuid";
 import { Request, Response } from "express";
 
-export default class PostsController {
-  findAll = async function findAll(request: Request, response: Response) {
+export default class BlogController {
+  async posts(request: Request, response: Response) {
     const posts = [];
 
     let postsNumber = 0;
@@ -20,9 +20,9 @@ export default class PostsController {
       postsNumber++;
     }
 
-    response.render("blog/posts/list", {
+    response.render("blog/posts", {
       posts,
       layout: false,
     });
-  };
+  }
 }
