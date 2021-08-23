@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <script
+      src="https://unpkg.com/htmx.org@1.5.0"
+      integrity="sha384-oGA+prIp5Vchu6we2YkI51UtVzN9Jpx2Z7PnR1I78PnZlN8LkrCT4lqqqmDkyrvI"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <%- include('partials/header'); -%>
+
+    <div class="c-wrapper">
+      <%- include('partials/sidebar'); -%>
+      <main class="c-main">
+        <div class="container"><%- body %></div>
+      </main>
+    </div>
+
+    <script src="/javascripts/main.js"></script>
+  </body>
+</html>

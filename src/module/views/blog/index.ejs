@@ -1,0 +1,15 @@
+<%- contentFor('body') %>
+
+<section>
+  <h2
+    class="page-title"
+    hx-get="/blog/posts"
+    hx-target="#replaceMe"
+    hx-trigger="load once"
+    hx-swap="innerHTML"
+  >
+    <%= title %>
+  </h2>
+
+  <div id="replaceMe"></div>
+</section>

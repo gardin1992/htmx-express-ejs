@@ -1,0 +1,9 @@
+<%- contentFor('body') %>
+
+<section>
+  <h2 class="page-title"><%= title %></h2>
+
+  <div hx-sse="connect:/sse/events">
+    <div hx-get="/sse/news" hx-trigger="sse:message"></div>
+  </div>
+</section>
