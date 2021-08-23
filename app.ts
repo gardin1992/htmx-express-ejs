@@ -9,7 +9,7 @@ import router from "./src/routes";
 const app = express();
 const errorController = new ErrorController();
 // view engine setup
-app.set("views", path.join(__dirname, "src/module/views"));
+app.set("views", path.join(__dirname, "src/app/views"));
 app.set("view engine", "ejs");
 app.use(expressEjsLayouts);
 
