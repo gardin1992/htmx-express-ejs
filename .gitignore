@@ -2,3 +2,7 @@ node_modules/
 build/
 
 *-error.log
+
+.env.local
+.env.development
+.env.production
