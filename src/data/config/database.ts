@@ -1,7 +1,16 @@
-export const config = {
-  username: "root",
-  password: "root",
-  database: "crud_sequelize",
-  host: "127.0.0.1",
-  dialect: "mysql",
+const result = require("dotenv").config({ path: "./.env.local" });
+
+if (result.error) {
+  throw result.error;
+}
+
+const { DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_HOST, DB_DIALECT } =
+  result.parsed;
+
+export default {
+  username: DB_USERNAME,
+  password: DB_PASSWORD,
+  database: DB_DATABASE,
+  host: DB_HOST,
+  dialect: DB_DIALECT,
 };
